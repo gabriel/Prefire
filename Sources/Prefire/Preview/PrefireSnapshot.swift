@@ -111,6 +111,9 @@ public struct DeviceConfig {
         
         window.contentView = hostingController.view
         window.isReleasedWhenClosed = false        
+        window.makeKeyAndOrderFront(nil)
+        hostingController.view.needsLayout = true
+        hostingController.view.layoutSubtreeIfNeeded()
         #endif
     }
 }

@@ -19,7 +19,7 @@ public struct UITraitCollection {
 
 extension NSScreen? {
     var bounds: CGRect {
-        return CGRect(x: 0, y: 0, width: 1024, height: 768)
+        return CGRect(origin: .zero, size: self?.frame.size ?? .zero)
     }
 }
 
