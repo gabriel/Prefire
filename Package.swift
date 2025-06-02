@@ -20,9 +20,15 @@ let package = Package(
             targets: ["PrefireTestsPlugin"]
         ),
     ],
+    dependencies: [
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.15.4")
+    ],
     targets: [
         .target(
-            name: "Prefire"
+            name: "Prefire",
+            dependencies: [
+                .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
+            ]
         ),
         .plugin(
             name: "PrefirePlaybookPlugin",
